@@ -1,0 +1,57 @@
+package EXP1;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+public class week10 {
+	public static void main(String[] args) throws InterruptedException{
+		WebDriver d=new ChromeDriver();
+		d.get("https://accounts.google.com/");
+		WebElement personal=d.findElement(By.xpath("//*[@id=\"yDmH0d\"]/c-wiz/div/div[3]/div/div[2]/div/div/div[1]/div/button/span"));
+		personal.click();
+		Thread.sleep(2000);
+		WebElement my=d.findElement(By.xpath("//*[@id=\"yDmH0d\"]/c-wiz/div/div[3]/div/div[2]/div/div/div[2]/div/ul/li[1]/span[3]"));
+		my.click();
+		Thread.sleep(2000);
+		WebElement fname=d.findElement(By.name("firstName"));
+		fname.sendKeys("anji");
+		Thread.sleep(2000);
+		WebElement lname=d.findElement(By.name("lastName"));
+		lname.sendKeys("yadav");
+		Thread.sleep(2000);
+		WebElement b1=d.findElement(By.xpath("//*[@id=\"collectNameNext\"]/div/button/span"));
+		b1.click();
+		Thread.sleep(2000);
+		Select m=new Select(d.findElement(By.xpath("//*[@id=\"month\"]")));
+		m.selectByValue("5");
+		Thread.sleep(2000);
+		WebElement day=d.findElement(By.name("day"));
+		day.sendKeys("21");
+		Thread.sleep(2000);
+		WebElement year=d.findElement(By.name("year"));
+		year.sendKeys("2005");
+		Thread.sleep(2000);
+		Select gender=new Select(d.findElement(By.xpath("//*[@id=\"gender\"]")));
+		gender.selectByValue("1");
+		Thread.sleep(2000);
+		WebElement b2=d.findElement(By.xpath("//*[@id=\"birthdaygenderNext\"]/div/button/span"));
+		b2.click();
+		Thread.sleep(2000);
+		WebElement mail=d.findElement(By.name("Username"));
+		mail.sendKeys("anjiyadav011");
+		Thread.sleep(2000);
+		WebElement b3=d.findElement(By.xpath("//*[@id=\"next\"]/div/button/span"));
+		b3.click();
+		Thread.sleep(2000);
+		WebElement pass=d.findElement(By.name("Passwd"));
+		pass.sendKeys("abcd@123");
+		Thread.sleep(2000);
+		WebElement apass=d.findElement(By.name("PasswdAgain"));
+		apass.sendKeys("abcd@123");
+		Thread.sleep(2000);
+		WebElement b4=d.findElement(By.xpath("//*[@id=\"createpasswordNext\"]/div/button/span"));
+		b4.click();
+		Thread.sleep(2000);
+	}
+}
