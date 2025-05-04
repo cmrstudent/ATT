@@ -1,0 +1,29 @@
+package EXP1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class week5 {
+
+	public static void main(String[] args) throws InterruptedException{
+		WebDriver d=new ChromeDriver();
+		d.get("https://cmrithyderabad.edu.in/");
+		WebElement ex=d.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div/div/div/nav[1]/ul/li[5]/a"));
+		ex.click();
+		Thread.sleep(2000);
+		WebElement rs=d.findElement(By.xpath("/html/body/div[1]/div[1]/section[3]/div/div/div/div/div/nav[1]/ul/li[5]/ul/li[4]/a"));
+		rs.click();
+		Thread.sleep(2000);
+		WebElement s=d.findElement(By.xpath("/html/body/div[3]/div[1]/form/div[1]/input"));
+		s.sendKeys("B.Tech. II Semester R22 Regular JULY 2024");
+		Thread.sleep(2000);
+		WebElement w=d.findElement(By.xpath("/html/body/div[3]/div[2]/div/a[1]/div/div[1]"));
+		w.click();
+		Thread.sleep(2000);
+		d.findElement(By.xpath("//*[@id=\"resultGetForm\"]/input")).sendKeys("23R01A0573");
+		Thread.sleep(2000);
+	}
+
+}
