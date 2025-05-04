@@ -1,0 +1,46 @@
+package EXP1;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class week3 {
+
+	public static void main(String[] args)throws InterruptedException {
+		WebDriver d=new ChromeDriver();
+		d.get("https://www.facebook.com/");
+		WebElement personal=d.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[5]/a"));
+		personal.click();
+		Thread.sleep(2000);
+		WebElement sname=d.findElement(By.name("firstname"));
+		sname.sendKeys("anji");
+		Thread.sleep(2000);
+		WebElement lname=d.findElement(By.name("lastname"));
+		lname.sendKeys("yadav");
+		Thread.sleep(2000);
+		Select date=new Select(d.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[2]/div[2]/span/span/select[1]")));
+		date.selectByValue("21");
+		Thread.sleep(2000);
+		Select month=new Select(d.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[2]/div[2]/span/span/select[2]")));
+		month.selectByValue("5");
+		Thread.sleep(2000);
+		Select year=new Select(d.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[2]/div[2]/span/span/select[3]")));
+		year.selectByValue("2005");
+		Thread.sleep(2000);
+		WebElement next=d.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[4]/span/span[2]/label"));
+		next.click();
+		Thread.sleep(2000);
+		WebElement mb=d.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[6]/div/div[1]/input"));
+		mb.sendKeys("7032345301");
+		Thread.sleep(2000);
+		WebElement p=d.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[8]/div/div[1]/input"));
+		p.sendKeys("anji@2005");
+		Thread.sleep(2000);
+		WebElement s=d.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div[2]/div/div[2]/div/div/div[1]/form/div[1]/div[11]/button"));
+		s.click();
+		Thread.sleep(2000);
+	}
+
+}
+
