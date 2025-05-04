@@ -1,0 +1,28 @@
+package EXP1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class week11 {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.myntra.com/");
+		WebElement profie=driver.findElement(By.xpath("//*[@id=\"desktop-header-cnt\"]/div[2]/div[2]/div/div[1]/span[2]"));
+		profie.click();
+		Thread.sleep(2000);
+		WebElement login=driver.findElement(By.xpath("//*[@id=\"desktop-header-cnt\"]/div[2]/div[2]/div/div[2]/div[2]/div[2]/div[1]/a"));
+		login.click();
+		Thread.sleep(2000);
+		WebElement mn=driver.findElement(By.xpath("//*[@id=\"reactPageContent\"]/div/div/div[2]/div[2]/div[1]/input"));
+		mn.sendKeys("9676673231");
+		Thread.sleep(2000);
+		WebElement cb=driver.findElement(By.xpath("//*[@id=\"reactPageContent\"]/div/div/div[2]/div[2]/div[3]"));
+		cb.click();
+		Thread.sleep(2000);
+	}
+
+}
